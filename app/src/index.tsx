@@ -1,5 +1,5 @@
-import { getDomain } from '@app/entities/domain';
-import { createUsecase1 } from '@app/usecases/usecase1';
+import { getDomain } from '@core/entities/domain';
+import { createUsecase1 } from '@core/usecases/usecase1';
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { AppContainer } from './App';

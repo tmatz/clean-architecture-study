@@ -1,0 +1,26 @@
+{
+  "name": "@core/entities",
+  "version": "0.0.0",
+  "description": "> TODO: description",
+  "author": "hal_matsuda <matsuda@hallab.co.jp>",
+  "homepage": "https://github.com/tmatz/clean-architecture-sample#readme",
+  "license": "ISC",
+  "main": "lib/entities.js",
+  "directories": {
+    "lib": "lib",
+    "test": "__tests__"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tmatz/clean-architecture-sample.git"
+  },
+  "scripts": {
+    "test": "echo \"Error: run tests from root\" && exit 1"
+  },
+  "bugs": {
+    "url": "https://github.com/tmatz/clean-architecture-sample/issues"
+  },
+  "dependencies": {
+    "prettier": "^2.2.1"
+  }
+}

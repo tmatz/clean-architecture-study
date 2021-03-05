@@ -1,4 +1,22 @@
 {
+  "name": "app",
+  "version": "0.0.0",
+  "description": "> TODO: description",
+  "author": "hal_matsuda <matsuda@hallab.co.jp>",
+  "homepage": "https://github.com/tmatz/clean-architecture-sample#readme",
+  "license": "ISC",
+  "main": "lib/app.js",
+  "directories": {
+    "lib": "lib",
+    "test": "__tests__"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tmatz/clean-architecture-sample.git"
+  },
+  "bugs": {
+    "url": "https://github.com/tmatz/clean-architecture-sample/issues"
+  },
   "scripts": {
     "start": "snowpack dev",
     "build": "snowpack build",
@@ -7,8 +25,8 @@
     "lint": "prettier --check \"src/**/*.{js,jsx,ts,tsx}\""
   },
   "dependencies": {
-    "@app/entities": "file:../entities",
-    "@app/usecases": "file:../usecases",
+    "@core/entities": "^0.0.0",
+    "@core/usecases": "^0.0.0",
     "react": "^17.0.0",
     "react-dom": "^17.0.0"
   },
@@ -16,7 +34,6 @@
     "@snowpack/plugin-dotenv": "^2.0.5",
     "@snowpack/plugin-react-refresh": "^2.4.0",
     "@snowpack/plugin-typescript": "^1.2.0",
-    "@snowpack/web-test-runner-plugin": "^0.2.0",
     "@testing-library/react": "^11.0.0",
     "@types/chai": "^4.2.13",
     "@types/mocha": "^8.2.0",
@@ -25,7 +42,7 @@
     "@types/snowpack-env": "^2.3.2",
     "@web/test-runner": "^0.12.0",
     "chai": "^4.2.0",
-    "prettier": "^2.0.5",
+    "prettier": "^2.2.1",
     "snowpack": "^3.1.0-pre.11",
     "typescript": "^4.0.0"
   }

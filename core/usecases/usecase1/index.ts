@@ -1,4 +1,4 @@
-import type { Domain } from "@app/entities/domain";
+import type { Domain } from "@core/entities/domain";
 
 export interface IUsecase1 {
   getDomainName(): string;

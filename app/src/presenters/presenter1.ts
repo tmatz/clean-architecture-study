@@ -1,4 +1,4 @@
-import type { IUsecase1 } from '@app/usecases/usecase1';
+import type { IUsecase1 } from '@core/usecases/usecase1';
 import { useEffect, useMemo, useState } from 'react';
 import { useUsecase1 } from '../hooks/usecases/use-usecase-1';
 

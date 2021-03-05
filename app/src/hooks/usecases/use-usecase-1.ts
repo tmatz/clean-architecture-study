@@ -1,4 +1,4 @@
-import type { IUsecase1 } from '@app/usecases/usecase1';
+import type { IUsecase1 } from '@core/usecases/usecase1';
 import { useServiceLocator } from '../../service-locator';
 
 export function useUsecase1(): IUsecase1 {

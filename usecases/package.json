@@ -1,9 +1,0 @@
-{
-  "name": "@app/usecases",
-  "description": "",
-  "license": "MIT",
-  "version": "1.0.0",
-  "dependencies": {
-    "@app/entities": "file:../entities"
-  }
-}
