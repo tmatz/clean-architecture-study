@@ -1,5 +1,5 @@
 import { getDomain } from '@core/entities/domain';
-import { createUsecase1 } from '@core/usecases/usecase1';
+import { createUsecaseTodo } from '@core/usecases/usecase-todo';
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { AppContainer } from './App';
@@ -7,7 +7,7 @@ import './index.css';
 import { ServiceLocator, ServiceLocatorContext } from './service-locator';
 
 const domain = getDomain();
-const usecase1 = createUsecase1(domain);
+const usecase1 = createUsecaseTodo(domain);
 
 const serviceLocator: ServiceLocator = {
   domain,
@@ -20,7 +20,7 @@ ReactDOM.render(
       <AppContainer />
     </ServiceLocatorContext.Provider>
   </React.StrictMode>,
-  document.getElementById('root'),
+  document.getElementById('root')
 );
 
 // Hot Module Replacement (HMR) - Remove this snippet to remove HMR.

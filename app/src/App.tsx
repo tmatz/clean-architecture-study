@@ -1,14 +1,19 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './App.css';
 import logo from './logo.svg';
-import { IPresenter1, usePresenter1 } from './presenters/presenter1';
+import {
+  IPresenterTodo,
+  usePresenterTodo as usePresenterTodo,
+} from './presenters/presenter-todo';
 import { withService } from './service-locator';
 
 interface AppProps {
-  presenter1: IPresenter1;
+  todo: IPresenterTodo;
 }
 
-export function App({ presenter1 }: AppProps) {
+export function App({ todo }: AppProps) {
+  const [id, setId] = useState('');
+  const [title, setTitle] = useState('');
   return (
     <div className="App">
       <header className="App-header">
@@ -17,7 +22,7 @@ export function App({ presenter1 }: AppProps) {
           Edit <code>src/App.tsx</code> and save to reload.
         </p>
         <p>
-          Page has been open for <code>{presenter1.count}</code> seconds.
+          Page has been open for <code>{todo.count}</code> seconds.
         </p>
         <p>
           <a
@@ -26,16 +31,55 @@ export function App({ presenter1 }: AppProps) {
             target="_blank"
             rel="noopener noreferrer"
           >
-            {presenter1.getDomainName()}
+            {todo.getDomainName()}
           </a>
         </p>
+        <textarea value={title} onChange={(ev) => setTitle(ev.target.value)} />
+        <button
+          onClick={(ev) => {
+            todo.createItem({ title });
+            setId('');
+            setTitle('');
+          }}
+        >
+          Add
+        </button>
+        <button
+          onClick={(ev) => {
+            todo.updateItem(id, { title });
+          }}
+        >
+          Update
+        </button>
+        <ul>
+          {todo.items.map((item) => (
+            <li
+              key={item.id}
+              data-id={item.id}
+              onClick={(ev) => {
+                setId(item.id);
+                setTitle(item.title);
+              }}
+            >
+              {item.title}
+              <button
+                onClick={(ev) => {
+                  ev.stopPropagation();
+                  todo.deleteItem(item.id);
+                }}
+              >
+                delete
+              </button>
+            </li>
+          ))}
+        </ul>
       </header>
     </div>
   );
 }
 
 export const AppContainer = withService(App, {
-  presenter1: usePresenter1,
+  todo: usePresenterTodo,
 });
 
 export default AppContainer;
